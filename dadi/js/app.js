@@ -17,12 +17,16 @@ generateNumberButtonElement.addEventListener('click', function(){
     const randomUserNumber = Math.floor(Math.random() * 100);
     console.log('user number: ', randomUserNumber);
     const userNumberElement = document.getElementById('user');
-    userNumberElement.innerHTML = `${randomUserNumber}`
+    userNumberElement.innerHTML = `
+    <p>Your number</p>
+    <div>${randomUserNumber}</div>`
     //un numero sarà per il pc
     const randomConsoleNumber = Math.floor(Math.random() * 100);
     console.log('console number: ', randomConsoleNumber);
     const consoleNumberElement = document.getElementById('console');
-    consoleNumberElement.innerHTML = `${randomConsoleNumber}`
+    consoleNumberElement.innerHTML = `
+    <p>Pc number</p>
+    <div>${randomConsoleNumber}</div>`
 
     const resultElement = document.getElementById('result');
 
