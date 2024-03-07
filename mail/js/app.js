@@ -20,7 +20,7 @@ const validEmail = ["francesca@gmail.com", "giacomo@tim.it", "gatto@hotmail.it"]
 // quando l'utente cliccherà invia 
    // devo collegare il pulsante invia all'evento click
    submitButtonDOMElement.addEventListener('click', function(){
-    console.log('invia');
+    
 //dichiaro una variabile per prendere il contenuto (value) della mail nel dom
     const userMail = mailDOMElement.value;
 
@@ -31,15 +31,15 @@ const validEmail = ["francesca@gmail.com", "giacomo@tim.it", "gatto@hotmail.it"]
   //la variabile del contenuto della mail diventerà vera
     const validEmailArray = validEmail[i];
      if(userMail === validEmailArray){
-        valueMailDOMElement = true
+        valueMailDOMElement = true;
      }
   }
 
    //viene inviato un messaggio di esito del controllo
    if(valueMailDOMElement === true){
-    console.log('accesso permesso')
+    console.log('accesso permesso');
 
  } else{
-    console.log('accesso negato')
+    console.log('accesso negato');
  }
 })
