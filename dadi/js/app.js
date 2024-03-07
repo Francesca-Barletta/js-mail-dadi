@@ -6,11 +6,41 @@ Prima di partire a scrivere codice poniamoci qualche domanda:
 Che ci sia un array da qualche parte?
 Se dobbiamo confrontare qualcosa che "cosa" ci serve?*/
 
-//devo generare due numeri random
+
 // devo recuperare il pulsante dal dom
+ const generateNumberButtonElement = document.querySelector('.generate');
 // devo associare l'evento click al pulsante, quindi la sua funzione:
-  //al click sul pulsante dell'utente,
-  //un numero sarà per l'utente e uno per il pc
+generateNumberButtonElement.addEventListener('click', function(){
+//al click sul pulsante dell'utente,
+    //devo generare due numeri random
+    //un numero sarà per l'utente
+    const randomUserNumber = Math.floor(Math.random() * 100);
+    console.log('user number: ', randomUserNumber);
+    const userNumberElement = document.getElementById('user');
+    userNumberElement.innerHTML = `${randomUserNumber}`
+    //un numero sarà per il pc
+    const randomConsoleNumber = Math.floor(Math.random() * 100);
+    console.log('console number: ', randomConsoleNumber);
+    const consoleNumberElement = document.getElementById('console');
+    consoleNumberElement.innerHTML = `${randomConsoleNumber}`
+
+    const resultElement = document.getElementById('result');
+
+    if(randomUserNumber > randomConsoleNumber){
+        console.log('hai vinto');
+        resultElement.innerHTML = `
+        <div class="box-result win"><p>Hai vinto!</p></div>`
+    } else if(randomUserNumber === randomConsoleNumber){
+        console.log('parità, ritenta');
+        resultElement.innerHTML = `
+        <div class="box-result egual"><p>Parità, ritenta!</p></div>`
+    } else{
+        console.log('hai perso');
+        resultElement.innerHTML = `
+        <div class="box-result loser"><p>Hai perso!</p></div>`
+    }
+})
+ 
   //devo stampare nel dom i due numeri
 
   //SE l'utente avrà il numero più alto 
