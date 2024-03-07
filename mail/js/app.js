@@ -5,27 +5,41 @@ stampa un messaggio appropriato sull’esito
 del controllo.*/
 
 //dichiaro una costante per prendere l'elemento pulsante invia dal dom
-const submitDOMElement = document.querySelector('submit');
+const submitButtonDOMElement = document.querySelector('.submit');
+
 
 //dichiaro una constante per prendere l'elemento email dal dom
 const mailDOMElement = document.getElementById('mail');
 
-//dichiaro una variabile per prendere il contenuto (value) della mail nel dom
-let valueMailDOMElement = mailDOMElement.value;
-
 // dichiaro una array come lista delle mail che possono accedere
-const validEmail = [];
+const validEmail = ["francesca@gmail.com", "giacomo@tim.it", "gatto@hotmail.it"];
 
 //dichiaro il value della email di default falso perchè non so se cosa c'è scritto
-valueMailDOMElement = false;
+ let valueMailDOMElement = false;
 
 // quando l'utente cliccherà invia 
    // devo collegare il pulsante invia all'evento click
-   submitDOMElement.addEventListener('click', function()){
+   submitButtonDOMElement.addEventListener('click', function(){
+    console.log('invia');
+//dichiaro una variabile per prendere il contenuto (value) della mail nel dom
+    const userMail = mailDOMElement.value;
+
     //la email scritta deve entrare in un ciclo per cui
   //viene controllato se la mail è nella lista di chi può accedere
-  for()
-  
-}
+  for(let i = 0; i < validEmail.length; i++){
+  //SE la mail è contenuta nella lista di quelle che possono accedere
+  //la variabile del contenuto della mail diventerà vera
+    const validEmailArray = validEmail[i];
+     if(userMail === validEmailArray){
+        valueMailDOMElement = true
+     }
+  }
 
-  //viene inviato un messaggio di esito del controllo
+   //viene inviato un messaggio di esito del controllo
+   if(valueMailDOMElement === true){
+    console.log('accesso permesso')
+
+ } else{
+    console.log('accesso negato')
+ }
+})
