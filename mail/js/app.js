@@ -29,21 +29,22 @@ const validEmail = ["francesca@gmail.com", "giacomo@tim.it", "gatto@hotmail.it"]
   for(let i = 0; i < validEmail.length; i++){
   //SE la mail è contenuta nella lista di quelle che possono accedere
   //la variabile del contenuto della mail diventerà vera
-    const validEmailArray = validEmail[i];
+ 
+  const validEmailArray = validEmail[i];
      if(userMail === validEmailArray){
         valueMailDOMElement = true;
-     }
+   
+     } 
   }
-    const accessElement = document.getElementById('access');
-   //viene inviato un messaggio di esito del controllo
-   if(valueMailDOMElement === true){
-    console.log('accesso permesso');
-    accessElement.innerHTML = `
-    <p class="valid">Accesso consentito</p>`
+  const accessElement = document.getElementById('access'); 
+  if(valueMailDOMElement === true){
+      console.log('accesso permesso');
+      accessElement.innerHTML = `
+      <p class="valid">Accesso consentito</p>`
+  } else {
+      console.log('accesso negato');
+      accessElement.innerHTML = `
+      <p class="error">Accesso negato</p>`
+  }
 
- } else{
-    console.log('accesso negato');
-    accessElement.innerHTML = `
-    <p class="error">Accesso negato</p>`
- }
 })
