@@ -34,12 +34,16 @@ const validEmail = ["francesca@gmail.com", "giacomo@tim.it", "gatto@hotmail.it"]
         valueMailDOMElement = true;
      }
   }
-
+    const accessElement = document.getElementById('access');
    //viene inviato un messaggio di esito del controllo
    if(valueMailDOMElement === true){
     console.log('accesso permesso');
+    accessElement.innerHTML = `
+    <p class="valid">Accesso consentito</p>`
 
  } else{
     console.log('accesso negato');
+    accessElement.innerHTML = `
+    <p class="error">Accesso negato</p>`
  }
 })
